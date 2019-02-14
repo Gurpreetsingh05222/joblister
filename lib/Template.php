@@ -1,7 +1,7 @@
 <?php class Template{
-	// Template Path
+	// Path To Template
 	protected $template;
-	// Vars Passed
+	// Vars Passed In
 	protected $vars = array();
 
 	// Constructor

@@ -2,7 +2,7 @@
 <html>
 <head>
 	<title>JobLister</title>
-  <link rel="stylesheet" href="css/bootstrap.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
 	<link rel="stylesheet" href="http://bootswatch.com/flatly/bootstrap.min.css">
 	<link rel="stylesheet" href="css/styles.css">
 </head>
@@ -17,3 +17,4 @@
         </nav>
         <h3 class="text-muted"><?php echo SITE_TITLE; ?></h3>
       </div>
+      <?php displayMessage(); ?>
