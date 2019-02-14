@@ -8,11 +8,11 @@
 
 		// Get All Jobs
 		public function getAllJobs(){
-			$this->db->query("SELECT jobs.*, categories.name AS cname 
-						FROM jobs 
+			$this->db->query("SELECT jobs.*, categories.name AS cname
+						FROM jobs
 						INNER JOIN categories
-						ON jobs.category_id = categories.id 
-						ORDER BY post_date DESC 
+						ON jobs.category_id = categories.id
+						ORDER BY post_date DESC
 						");
 			// Assign Result Set
 			$results = $this->db->resultSet();
@@ -31,12 +31,12 @@
 
 		// Get Jobs By Category
 		public function getByCategory($category){
-			$this->db->query("SELECT jobs.*, categories.name AS cname 
-						FROM jobs 
+			$this->db->query("SELECT jobs.*, categories.name AS cname
+						FROM jobs
 						INNER JOIN categories
-						ON jobs.category_id = categories.id 
+						ON jobs.category_id = categories.id
 						WHERE jobs.category_id = $category
-						ORDER BY post_date DESC 
+						ORDER BY post_date DESC
 						");
 			// Assign Result Set
 			$results = $this->db->resultSet();
@@ -53,6 +53,16 @@
 			// Assign Row
 			$row = $this->db->single();
 
+			return $row;
+		}
+
+		//Get job
+		public function getJob($id){
+			$this->db->query("SELECT * FROM jobs WHERE id = :id");
+
+			$this->db->bind(':id', $id);
+
+			$row = $this->db->single();
 			return $row;
 		}
 	}
